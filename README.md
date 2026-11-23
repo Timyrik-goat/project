@@ -50,10 +50,25 @@
 
 4. **Запустите приложение:**
    ```bash
-   python -m src.main
+   python -m src.cli
    ```
 
 5. **Запустите тесты:**
    ```bash
-   python -m pytest test/
+   python -m pytest -v
    ```
+
+
+## Использование
+
+python -m src.cli object add --address "Ленина 10" --type apartment --area 55 --rooms 2 --price 8000000
+python -m src.cli client add --name "Иванов" --phone "+79001234567" --budget 9000000 --reqs '{"min_area":45}'
+python -m src.cli search --max_price 9000000 --status active
+python -m src.cli match <client_id>
+python -m src.cli deal create --object_id <...> --client_id <...> --agent_id <...>
+python -m src.cli report --since "2026-11-01"
+
+
+### Отладка
+
+python -m src.cli object add --address "Ленина 10" --type apartment --area 55 --rooms 2 --price 8000000 --debug
